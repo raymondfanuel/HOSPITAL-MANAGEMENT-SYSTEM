@@ -30,17 +30,17 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'receptionist') {
         <p>Welcome, Receptionist</p>
     <ul>
         <li>
-            <button onclick="window.location.href='register_patient.php'">
+            <button onclick="registerPatient()">
                 Register New Patient
             </button>
         </li>
         <li>
-            <button onclick="window.location.href='view_patients.php'">
+            <button onclick="viewPatients()">
                 View Patients
             </button>
         </li>
         <li>
-            <button onclick="window.location.href='book_appointment'">
+            <button onclick="bookAppointment()">
                 Book Appointment
             </button>
         </li>
@@ -51,6 +51,8 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'receptionist') {
         <p>&copy; 2025 Hospital Management System</p>
         <p>Developed by Raymond</p>
     </footer>
-   
+
+
+    <script src="script.js"></script> 
 </body>
 </html>
