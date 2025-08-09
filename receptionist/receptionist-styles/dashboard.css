@@ -6,8 +6,6 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
     line-height: 1.6;
     background-image: url('images/receptionist-pic.jpg');
     background-size: cover;
@@ -38,10 +36,6 @@ h1 {
     font-weight: 500;
 }
 
-.container span {
-    color: #010124;
-    font-weight: 600;
-}
 
 .container {
     max-width: 1200px;

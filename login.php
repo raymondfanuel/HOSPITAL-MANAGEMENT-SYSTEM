@@ -6,35 +6,42 @@ $username = "root";
 $password = "";
 $dbname = "hms_database";
 
+// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-
+// Get POST data
 $role = $_POST['role'] ?? '';
 $userid = trim($_POST['userid'] ?? '');
-$password = $_POST['password'] ?? '';
+$password_input = $_POST['password'] ?? '';
 
-//prepare and bind
+// Prepare and bind
 $stmt = $conn->prepare("SELECT id, password_hash, role FROM users WHERE username = ? AND role = ?");
 $stmt->bind_param("ss", $userid, $role);
 $stmt->execute();
 $stmt->store_result();
 
-if ($stmt->num_rows == 1) {
-    $stmt->bind_result($user_id, $password_hash, $user_role);
+if ($stmt->num_rows === 1) {
+    // Bind to new variables so we don't overwrite POST ones
+    $db_userid = null;
+    $db_password_hash = null;
+    $db_role = null;
+
+    $stmt->bind_result($db_userid, $db_password_hash, $db_role);
     $stmt->fetch();
 
-    if (password_verify($password, $password_hash)) {
-        //password is correct
-        $_SESSION['user_id'] = $user_id;
-        $_SESSION['username'] = $userid;
-        $_SESSION['role'] = $user_role;
+    if (password_verify($password_input, $db_password_hash)) {
+        // Password is correct
+        $_SESSION['user_id'] = $db_userid; // Store numeric ID from DB
+        $_SESSION['username'] = $userid;   // Store typed username
+        $_SESSION['role'] = $db_role;
 
-        //redirect based on role
-        switch ($user_role) {
+        // Redirect based on role
+        switch ($db_role) {
             case 'receptionist':
                 header("Location: receptionist/dashboard.php");
                 break;
@@ -60,16 +67,17 @@ if ($stmt->num_rows == 1) {
         }
         exit;
     } else {
-        //wrong password
+        // Wrong password
         header("Location: index.html?error=Invalid_password");
         exit;
     }
 } else {
-    //user not found
+    // User not found
     header("Location: index.html?error=User_not_found");
     exit;
 }
 
 $stmt->close();
 $conn->close();
+
 ?>

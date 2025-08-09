@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('images/new-patient.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;    
+}
+
+header {
+    background-color: #010124;
+    color: rgb(255, 255, 255);
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header-description {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.container p {
+    text-align: center;
+    margin: 10px 0;
+    color: #010124;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 40px 40px 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    margin-bottom: 5px;
+    display: block;
+    color: #010124;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.input-group input{
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-group select {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-group select option {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.input-group textarea {
+    width: 60%;
+    height: 45px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+}
+
+.input-group input:focus{
+    border-color: #010124;
+    outline: none;
+}
+
+.container form {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 15px;
+}
+
+.container form button {
+    width: 30%;
+    height: 50px;
+    margin-top: 35px;
+    padding: 10px;
+    background-color: #010124;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #010124;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}

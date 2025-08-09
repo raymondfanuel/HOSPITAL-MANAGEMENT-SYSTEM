@@ -7,22 +7,24 @@
     <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="https://fonts.google.com/share?selection.family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900">
 </head>
-<body style="
-background: url('doctor-patient.jpg') no-repeat center;
-background-size: cover;
-height: 100vh;
-">
+<body>
+    <header>
+        <div class="header-description">
+        <h1>HOSPITAL MANAGEMENT SYSTEM</h1>
+        </div>
+    </header>
+
     <div class="container">
         <form action="login.php" method="post">
         <h1>HMS</h1>
             <div class="input-group">
                 <label for="role">Role</label>
                 <select id="role" name="role" required>
-                    <option value="reception" selected>Reception</option>
+                    <option value="receptionist">Reception</option>
                     <option value="laboratory">Laboratory</option>
                     <option value="nurse">Nurse</option>
                     <option value="doctor">Doctor</option>
-                    <option value="account">Accountant</option>
+                    <option value="accountant">Accountant</option>
                     <option value="pharmacy">Pharmacist</option>
                 </select>
             </div>
@@ -37,6 +39,11 @@ height: 100vh;
             <button type="submit">ENTER</button>
         </form>
     </div>
+
+    <footer>
+        <p>&copy; 2025 Hospital Management System</p>
+        <p>Developed by Raymond</p>
+    </footer>
     
 </body>
 </html>

@@ -2,14 +2,25 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background-image: url('images/doctor-patient.jpg');
+    background-size: cover;
     font-family: 'Poppins', sans-serif;
 }
 
+header {
+    background-color: #010124;
+    color: rgb(255, 255, 255);
+    padding: 10px 0;
+    text-align: center;
+}
 
 .container {
     width: 100%;
-    height: 100vh;
     display: flex;
+    margin-top: 5%;
     justify-content: center;
     align-items: center;
 }
@@ -17,7 +28,7 @@
 form {
     width: 400px;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 1);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -25,7 +36,7 @@ form {
 form h1 {
     text-align: center;
     margin-bottom: 20px;
-    color: #1b0f89;
+    color: #010124;
     font-size: 40px;
     font-weight: 600;
 }
@@ -37,7 +48,7 @@ form h1 {
 .input-group label {
     display: block;
     margin-bottom: 5px;
-    color: #0a0067;
+    color: #010124;
     font-size: 18px;
     font-weight: 500;
 }
@@ -64,17 +75,33 @@ form h1 {
 }
 
 .input-group input:focus{
-    border-color: #6a11cb;
+    border-color: #010124;
     outline: none;
 }
 
 .container form button {
     width: 100%;
     padding: 10px;
-    background-color: #6a11cb;
+    background-color: #010124;
     color: white;
     border: none;
     border-radius: 5px;
     font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
+}
+
+footer {
+    background-color: #010124;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
 }
