@@ -94,3 +94,15 @@ CREATE TABLE bill_items (
     amount DECIMAL(10, 2) NOT NULL,
     FOREIGN KEY (bill_id) REFERENCES bills(id)
 );
+
+CREATE TABLE vitals (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    patient_id INT NOT NULL,
+    nurse_id INT NOT NULL,
+    temperature DECIMAL(4,1),
+    blood_pressure VARCHAR(7),
+    pulse INT,
+    height DECIMAL(5,2),
+    weight DECIMAL(5,2),
+    recorded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
