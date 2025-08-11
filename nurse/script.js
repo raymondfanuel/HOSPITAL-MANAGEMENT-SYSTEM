@@ -3,7 +3,7 @@ function viewAssignedPatients() {
 }
 
 function recordVitals() {
-    window.location.href = "record_vitals.php";
+    window.location.href = "update_vitals.php";
 }
         
 function viewPatientHistory() {
