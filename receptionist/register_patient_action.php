@@ -27,7 +27,7 @@ $stmt = $conn->prepare("INSERT INTO patients (name, dob, gender, phone, address)
 $stmt->bind_param("sssss", $name, $dob, $gender, $phone, $address);
 
 if ($stmt->execute()) {
-    echo "Patient registered successfully. <a href='dashboard.php'>Go back to dashboard</a>";
+    echo "Patient registered successfully.";
 } else {
     echo "Error: " . $stmt->error . ". <a href='dashboard.php'>Go back to dashboard</a>";
 }

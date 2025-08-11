@@ -27,7 +27,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'receptionist') {
 
     <div class="container">
         <p>REGISTER NEW PATIENT</p>
-        <form action="register_patient_action.php" method="post">
+        <form id = 'form'>
             <div class="input-group">
                 <label for="name">Full Name</label>
                 <input type="text" name="name" required>
@@ -61,6 +61,23 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'receptionist') {
         <p>&copy; 2025 Hospital Management System</p>
         <p>Developed by Raymond</p>
     </footer>
-    
+   <script>
+    document.getElementById('form').addEventListener('submit', async function (e){
+        e.preventDefault();
+        form = e.target;
+        formdata = new FormData(form);
+        try{
+            const res = await fetch("register_patient_action.php", {
+                method: 'POST',
+                body: formdata
+            });
+            const message = await res.text();
+            alert(message);
+        }
+        catch(err){
+            console.log("An error occure d"+ err);
+        }
+    })
+   </script> 
 </body>
 </html>
