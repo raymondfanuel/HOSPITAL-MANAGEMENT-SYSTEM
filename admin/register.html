@@ -14,7 +14,7 @@
     </header>
 
     <div class="container">
-        <form action="register.php" method="post">
+        <form  id = "form">
         <h1>NEW USER</h1>
         <div class="input-group">
             <label for="username">User ID</label>
@@ -43,5 +43,24 @@
         <p>&copy; 2025 Hospital Management System</p>
         <p>Developed by Raymond</p>
     </footer>
+    <script>
+        document.getElementById('form').addEventListener("submit",  async function (e){
+            e.preventDefault();
+            form = e.target
+            formdata =  new FormData(form);
+            try{
+                const res = await fetch("register.php", {
+                    method: 'POST',
+                    body: formdata
+                });
+                const message = await res.text();
+                alert(message);
+            }
+            catch(err){
+                console.log('error occured '+ err);
+            }
+        }
+    )
+    </script>
 </body>
 </html>
