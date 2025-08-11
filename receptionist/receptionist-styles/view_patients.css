@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('images/new-patient.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;    
+}
+
+header {
+    background-color: #010124;
+    color: rgb(255, 255, 255);
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header-description {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.container p {
+    text-align: center;
+    margin: 10px 0;
+    color: #010124;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.container a {
+    text-decoration: none;
+    color: white;
+    background-color: #010146;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 40px 40px 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+table  thead tr th {
+    background-color: #010146;
+    color: white;
+    padding: 10px;
+    text-align: center;
+
+}
+
+table tbody tr td {
+    text-align: center;
+    font-weight: bold;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #010124;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
