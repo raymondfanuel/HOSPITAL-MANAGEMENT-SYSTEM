@@ -1,4 +1,3 @@
-<!--
 <?php
 session_start();
 
@@ -45,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $patients_result = $conn->query("SELECT id, name FROM patients ORDER BY name ASC");
 $doctors_result = $conn->query("SELECT id, username FROM users WHERE role = 'doctor' ORDER BY username ASC");
 ?>
--->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -63,56 +62,64 @@ $doctors_result = $conn->query("SELECT id, username FROM users WHERE role = 'doc
     </header>
 
     <div class="container">
-        <h1>Book Appointment</h1>
+        <p>Book Appointment</p>
         <a href="dashboard.php">Back to Dashboard</a>
 
-        <!--
+        
         <?php if (!empty($success)): ?>
             <p style="color:green;"><?= htmlspecialchars($success) ?></p>
         <?php endif; ?>
         <?php if (!empty($error)): ?>
             <p style="color:red;"><?= htmlspecialchars($error) ?></p>
         <?php endif; ?>
-        -->
+        
 
         <form action="" method="post">
-            <label for="patient_id">Patient:</label>
-            <select name="patient_id" id="patient_id" required>
-                <option value="">Select patient</option>
-                <!--
-                <?php while ($patient = $patients_result->fetch_assoc()): ?>
-                    <option value="<?= $patient['id'] ?>"><?= htmlspecialchars($patient['name']) ?></option>
-                <?php endwhile; ?>
-                -->
-            </select>
-
-            <label for="doctor_id">Doctor:</label>
-            <select name="doctor_id" id="doctor_id" required>
-                <option value="">Select doctor</option>
-                <!--
-                <?php while ($doctor = $doctors_result->fetch_assoc()): ?>
-                    <option value="<?= $doctor['id'] ?>"><?= htmlspecialchars($doctor['username']) ?></option>
-                <?php endwhile; ?>
-                -->
-            </select>
-
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date" required /><br><br>
-
-            <label for="time">Time:</label>
-            <input type="time" id="time" name="time" required /><br><br>
+            <div class="inner-container">
+                <label for="patient_id">Patient</label>
+                <select name="patient_id" id="patient_id" class="input-group" required>
+                    <option value="">Select patient</option>
+                    
+                    <?php while ($patient = $patients_result->fetch_assoc()): ?>
+                        <option value="<?= $patient['id'] ?>"><?= htmlspecialchars($patient['name']) ?></option>
+                    <?php endwhile; ?>
+                    
+                </select>
+            </div>
+            <div class="inner-container">
+                <label for="doctor_id">Doctor</label>
+                <select name="doctor_id" id="doctor_id" class="input-group" required>
+                    <option value="">Select doctor</option>
+                    
+                    <?php while ($doctor = $doctors_result->fetch_assoc()): ?>
+                        <option value="<?= $doctor['id'] ?>"><?= htmlspecialchars($doctor['username']) ?></option>
+                    <?php endwhile; ?>
+                    
+                </select>
+            </div>
+            <div class="inner-container">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" class="input-group" required />
+            </div>
+            <div class="inner-container">
+                <label for="time">Time</label>
+                <input type="time" id="time" name="time" class="input-group" required />
+            </div>
+   
 
             <button type="submit">Book Appointment</button>
         </form>
 
     </div>
 
-    
+    <footer>
+        <p>&copy; 2025 Hospital Management System</p>
+        <p>Developed by Raymond</p>
+    </footer>  
 </body>
 </html>
 
-<!--
 <?php
 $conn->close();
 ?>
--->
+
