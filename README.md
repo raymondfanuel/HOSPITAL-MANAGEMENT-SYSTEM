@@ -63,4 +63,97 @@ The system uses a **MySQL database** with tables including (but not limited to):
 ---
 
 ## 📂 Project Structure
+hospital-management-system/
+│
+├── index.html # Login page
+├── db.php # Database connection
+│
+├── receptionist/ # Receptionist module
+│ ├── dashboard.php
+│ ├── register-patient.php
+│ ├── view-patients.php
+│ ├── book-appointment.php
+│
+├── nurse/ # Nurse module
+│ ├── dashboard.php
+│ ├── view-patients.php
+│ ├── update-vitals.php
+│
+├── doctor/ # Doctor module
+│ ├── dashboard.php
+│ ├── patient-history.php
+│ ├── prescribe-medicine.php
+│
+├── laboratory/ # Lab module
+│ ├── dashboard.php
+│ ├── request-tests.php
+│ ├── input-results.php
+│
+├── pharmacy/ # Pharmacy module
+│ ├── dashboard.php
+│ ├── manage-inventory.php
+│ ├── dispense-medicine.php
+│
+├── accountant/ # Accountant module
+│ ├── dashboard.php
+│ ├── billing.php
+│ ├── invoices.php
+│
+└── assets/ # CSS, JS, images
+
+
+---
+
+## 🛠️ Setup Instructions
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/raymondfanuel/HOSPITAL-MANAGEMENT-SYSTEM.git
+   cd HOSPITAL-MANAGEMENT-SYSTEM
+
+
+Set up the database
+
+Create a database in MySQL (e.g., hospital_db)
+
+Import the SQL dump file provided (db.sql)
+
+Configure connection
+
+Open db.php
+
+Update database credentials (host, username, password, dbname)
+
+Run the project
+
+Place the project folder inside htdocs (XAMPP) or /var/www/html (LAMP)
+
+Start Apache & MySQL
+
+Visit in browser:
+
+http://localhost/hospital-management-system/
+
+🔑 Default Login Roles (Demo)
+Role	Username	Password
+Receptionist	receptionist	12345
+Nurse	nurse	12345
+Doctor	doctor	12345
+Laboratory	lab	12345
+Pharmacy	pharmacy	12345
+Accountant	accountant	12345
+
+(These are for testing; update/change in production.)
+
+👨‍💻 Developer
+
+Name: Raymond
+
+Institute: Dar es Salaam Institute of Technology
+
+Role: Fullstack Developer
+
+📜 License
+
+This project is licensed under the MIT License – feel free to use, modify, and distribute.
 
